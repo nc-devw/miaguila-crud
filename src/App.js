@@ -1,13 +1,36 @@
-import { Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Redirect, Route, Switch } from 'react-router-dom';
+
+/* --- Styled Components --- */
+import { Flex } from './styles/globalStyled';
 
 /* --- Components --- */
+import Home from './components/Home';
 import Login from './components/Login';
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
 
 function App() {
+	const user = useSelector((state) => state.user);
 	return (
-		<Route exact path="/login">
-			<Login />
-		</Route>
+		<Switch>
+			<Route exact path="/login">
+				<Login />
+			</Route>
+			{user.status ? (
+				<Flex>
+					<Sidebar />
+					<Flex direction="column" className="flex-1">
+						<Navbar />
+						<Route exact path="/inicio">
+							<Home />
+						</Route>
+					</Flex>
+				</Flex>
+			) : (
+				<Redirect to="/login" />
+			)}
+		</Switch>
 	);
 }
 

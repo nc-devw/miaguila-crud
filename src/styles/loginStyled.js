@@ -35,7 +35,7 @@ export const FormStyled = styled.form`
 	button {
 		margin: 1em;
 		padding: 1em 4em;
-		color: var(--clr-dark);
+		color: var(--clr-text);
 		font-weight: 600;
 		background-color: var(--clr-white);
 		border: 1px solid var(--clr-primary);

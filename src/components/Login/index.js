@@ -7,11 +7,7 @@ import { loginUser } from '../../redux/action/users_actions';
 import spinner from '../../assets/icons/spinner.svg';
 
 /* --- Styled Components --- */
-import {
-	Badge,
-	ContainerFullView,
-	SVGSpinner,
-} from '../../styles/globalStyled';
+import { Badge, Flex, SVGSpinner } from '../../styles/globalStyled';
 import { FormStyled } from '../../styles/loginStyled';
 
 const Login = () => {
@@ -28,17 +24,17 @@ const Login = () => {
 	const handleSubmit = async (ev) => {
 		ev.preventDefault();
 		if (!/^[a-z0-9_.-]+@[a-z0-9-]+\.[a-z]{2,}$/.test(input.email)) {
-			setError('El email ingresado no es valido');
+			return setError('El email ingresado no es valido');
 		}
 		if (!/^(?=.*\d)(?=.*[a-z]).*[A-Z]/.test(input.pass)) {
-			setError(
+			return setError(
 				'La contraseña debe tener al menos un número y una letra mayúscula'
 			);
 		}
 		setLoading(true);
 		try {
 			await dispatch(loginUser(input));
-			history.push('/');
+			history.push('/inicio');
 		} catch (err) {
 			setError(err.message);
 		}
@@ -54,7 +50,7 @@ const Login = () => {
 	};
 
 	return (
-		<ContainerFullView justify="center" align="center">
+		<Flex justify="center" align="center">
 			<FormStyled onSubmit={handleSubmit}>
 				<h2>Inicio de sesión</h2>
 				{error && <Badge className="error">{error}</Badge>}
@@ -81,7 +77,7 @@ const Login = () => {
 					{loading ? <SVGSpinner src={spinner} /> : 'Enviar'}
 				</button>
 			</FormStyled>
-		</ContainerFullView>
+		</Flex>
 	);
 };
 

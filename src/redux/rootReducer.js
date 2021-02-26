@@ -1,7 +1,7 @@
-import { LOGIN_USER } from '../constants';
+import { LOGIN_USER } from './constants';
 
 const initialState = {
-	user: {},
+	user: JSON.parse(localStorage.getItem('user')) || {},
 };
 
 const usersReducer = (state = initialState, action) => {

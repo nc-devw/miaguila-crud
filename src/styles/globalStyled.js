@@ -12,41 +12,21 @@ export const Badge = styled.span`
 	color: var(--clr-white);
 	border-radius: 10em;
 
-	&.warning {
-		background-color: var(--clr-warning);
-	}
-
 	&.error {
 		background-color: var(--clr-error);
 	}
-
-	&.success {
-		background-color: var(--clr-success);
-	}
-
-	&.secondary {
-		background-color: var(--clr-secondary);
-	}
-
-	&.dark {
-		background-color: var(--clr-dark);
-	}
-
-	&.small {
-		width: 50px;
-	}
 `;
 
-export const ContainerFullView = styled.div`
+export const Flex = styled.div`
 	display: flex;
 	justify-content: ${({ justify }) => justify || 'flex-start'};
 	align-items: ${({ align }) => align || 'stretch'};
-	height: 100vh;
+	flex-direction: ${({ direction }) => direction || 'row'};
+	min-height: 100vh;
 `;
 
 export const SVGSpinner = styled(SVG)`
-	color: var(--clr-dark);
-	fill: var(--clr-dark);
+	color: var(--clr-text);
 	animation: spinner 2s linear infinite;
 
 	@keyframes spinner {
