@@ -53,7 +53,11 @@ const Login = () => {
 		<Flex justify="center" align="center">
 			<FormStyled onSubmit={handleSubmit}>
 				<h2>Inicio de sesión</h2>
-				{error && <Badge className="error">{error}</Badge>}
+				{error && (
+					<Badge margin="1em 0 0 0" className="error">
+						{error}
+					</Badge>
+				)}
 				<label>
 					<span>Email</span>
 					<input

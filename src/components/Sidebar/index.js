@@ -34,12 +34,10 @@ const Sidebar = () => {
 					<span>Tareas</span>
 				</NavLink>
 			</div>
-			<div className="settings">
-				<Link to="/settings">
-					<SVGMenu src={settings} />
-					<span>Configuración</span>
-				</Link>
-			</div>
+			<Link to="/configuracion" className="settings">
+				<SVGMenu src={settings} />
+				<span>Configuración</span>
+			</Link>
 		</SidebarStyled>
 	);
 };

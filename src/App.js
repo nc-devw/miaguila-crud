@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
+import Users from './components/Users';
 
 function App() {
 	const user = useSelector((state) => state.user);
@@ -24,6 +25,9 @@ function App() {
 						<Navbar />
 						<Route exact path="/inicio">
 							<Home />
+						</Route>
+						<Route exact path="/usuarios">
+							<Users />
 						</Route>
 					</Flex>
 				</Flex>

@@ -1,7 +1,8 @@
-import { LOGIN_USER } from './constants';
+import { GET_USERS, LOGIN_USER } from './constants';
 
 const initialState = {
 	user: JSON.parse(localStorage.getItem('user')) || {},
+	users: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ const usersReducer = (state = initialState, action) => {
 			return {
 				...state,
 				user: action.payload,
+			};
+		}
+		case GET_USERS: {
+			return {
+				...state,
+				users: action.payload,
 			};
 		}
 		default:

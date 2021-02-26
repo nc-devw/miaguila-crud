@@ -3,9 +3,9 @@ import SVG from 'react-inlinesvg';
 
 export const Badge = styled.span`
 	display: inline-block;
-	min-width: 175px;
-	margin-top: 1em;
-	padding: 0.7em 1.2em;
+	min-width: ${({ minWidth }) => minWidth || '175px'};
+	margin: ${({ margin }) => margin || 'none'};
+	padding: ${({ padding }) => padding || '0.7em 1.2em'};
 	font-size: 0.75em;
 	font-weight: 900;
 	text-align: center;
@@ -14,6 +14,9 @@ export const Badge = styled.span`
 
 	&.error {
 		background-color: var(--clr-error);
+	}
+	&.secondary {
+		background-color: var(--clr-secondary);
 	}
 `;
 
