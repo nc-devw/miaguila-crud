@@ -17,8 +17,15 @@ function App() {
 	const user = useSelector((state) => state.user);
 	return (
 		<Switch>
+			<Route exact path="/">
+				{user.status ? (
+					<Redirect to="/inicio" />
+				) : (
+					<Redirect to="/login" />
+				)}
+			</Route>
 			<Route exact path="/login">
-				<Login />
+				{user.status ? <Redirect to="/inicio" /> : <Login />}
 			</Route>
 			{user.status ? (
 				<Flex>
