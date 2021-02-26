@@ -45,11 +45,12 @@ export const FormStyled = styled.form`
 		box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
 		transition: transform 25ms ease, box-shadow 25ms ease;
 		&:hover {
+			transform: scale(1.05);
 			color: var(--clr-white);
 			background-color: var(--clr-secondary);
 		}
 		&:active {
-			transform: translate(2px, 2px);
+			transform: scale(0.95);
 			box-shadow: none !important;
 		}
 		&:focus {

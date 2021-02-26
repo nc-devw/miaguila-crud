@@ -47,3 +47,8 @@ a {
 .text-center {
 	text-align: center;
 }
+
+.v-hidden {
+	visibility: hidden;
+	pointer-events: none;
+}

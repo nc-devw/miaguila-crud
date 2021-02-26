@@ -4,7 +4,13 @@ export const UserStyled = styled.ul`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	.th {
+		display: none;
+	}
 	ul {
+		width: 100%;
+		margin: 0 auto;
+		max-width: 800px;
 		list-style: none;
 		li {
 			display: flex;
@@ -12,7 +18,6 @@ export const UserStyled = styled.ul`
 			align-items: center;
 			padding: 1em;
 			text-align: center;
-			width: 800px;
 			.name {
 				flex: 1;
 				font-weight: 600;
@@ -24,8 +29,24 @@ export const UserStyled = styled.ul`
 				flex: 1;
 			}
 			.status {
-				flex: 1;
+				flex: 0 0 200px;
 			}
+		}
+	}
+	@media (max-width: 1000px) {
+		ul {
+			li {
+				flex-direction: column;
+				.status {
+					flex: 0 0 auto;
+				}
+			}
+		}
+		.th {
+			display: block;
+		}
+		.header {
+			display: none;
 		}
 	}
 `;

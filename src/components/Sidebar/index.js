@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-/* --- Styled Components --- */
-import { SidebarStyled, SVGMenu } from '../../styles/sidebarStyled';
-
 /* --- Assets --- */
 import logo from '../../assets/logo.png';
 import home from '../../assets/icons/home.svg';
 import users from '../../assets/icons/users.svg';
 import tasks from '../../assets/icons/tasks.svg';
 import settings from '../../assets/icons/settings.svg';
+
+/* --- Styled Components --- */
+import { SidebarStyled, SVGMenu } from '../../styles/sidebarStyled';
 
 const Sidebar = () => {
 	return (

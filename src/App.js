@@ -10,6 +10,8 @@ import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Users from './components/Users';
+import Tasks from './components/Tasks';
+import TasksEdit from './components/Tasks/edit';
 
 function App() {
 	const user = useSelector((state) => state.user);
@@ -28,6 +30,12 @@ function App() {
 						</Route>
 						<Route exact path="/usuarios">
 							<Users />
+						</Route>
+						<Route exact path="/tareas">
+							<Tasks />
+						</Route>
+						<Route exact path="/tareas/editar">
+							<TasksEdit />
 						</Route>
 					</Flex>
 				</Flex>

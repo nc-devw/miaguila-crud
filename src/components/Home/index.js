@@ -1,7 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { HomeStyled } from '../../styles/homeStyled';
+
+/* --- Assets --- */
 import illustration from '../../assets/illustration.png';
+
+/* --- Styled Components --- */
+import { HomeStyled } from '../../styles/homeStyled';
+
 const Home = () => {
 	const user = useSelector((state) => state.user);
 	return (

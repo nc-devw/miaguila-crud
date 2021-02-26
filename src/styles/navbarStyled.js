@@ -23,6 +23,7 @@ export const NavbarStyled = styled.nav`
 				height: 18px;
 				margin-right: 1em;
 				span {
+					cursor: default;
 					position: absolute;
 					top: -12px;
 					right: -10px;
