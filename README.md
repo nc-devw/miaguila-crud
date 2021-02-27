@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# CRUD - Mi Águila
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto realizado con react,redux y utilizando git flow. Se trata basicamente de un panel de usuario donde puede ver los distintos usuarios de la plataforma, tambien puede ver,eliminar y editar sus tareas.
 
-## Available Scripts
+La parte del login tiene validaciones hechas con estados de react y viendo que pasen ciertas expresiones regulares. Luego me fui al inicio donde por medio de flex pude dividir en 3 cajas principales lo que es sidebar, navbar y container. De ahi pase a lo que es la lista de usuarios donde no lo hice con una tabla para poder manejar mejor el responsive. Una vez terminado usuarios me dirigi a las tareas donde realize el crud con redux y agregando un formulario para editar las tareas. Lo ultimo fue armar la logica de la session para que no dure mas de 5 minutos si el usuario no esta disponible, esto lo realize con un modal en React Portal y con un setInterval. Extra: Agregue un logout y algunos estilos responsive.
 
-In the project directory, you can run:
+## Como funciona
+
+Dentro de la carpeta del repositorio simplemente ejecutar:
+
+### `npm install`
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Abrir en el navegador la siguiente url [http://localhost:3000](http://localhost:3000)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Una vez en el inicio puede indicar cualquier email(que contenga formato de email) o contraseña(mayor a 7 caracteres, que contenga una mayuscula y al menos un numero) y va a ingresar al panel de ignacio contreras. Esta parte no me quedo muy claro sobre como resolver el login ya que no habia contra que compararlo en la api que me habian facilitado o al menos no lo encontre.
