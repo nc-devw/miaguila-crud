@@ -28,7 +28,7 @@ const Tasks = () => {
 		if (!tasks.length) {
 			dispatch(getTasks());
 		}
-	}, []);
+	}, [dispatch]);
 
 	const handleSubmit = (ev) => {
 		ev.preventDefault();

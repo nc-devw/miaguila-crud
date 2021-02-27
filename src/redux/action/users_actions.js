@@ -2,12 +2,14 @@ import axios from 'axios';
 import {
 	GET_USERS,
 	LOGIN_USER,
+	LOGOUT_USER,
 	GET_TASKS,
 	ADD_TASK,
 	EDIT_TASK,
 	DELETE_TASK,
 	CLEAR_TASKS,
 	COMPLETE_TASK,
+	INIT_SESSION,
 } from '../constants';
 
 export const loginUser = (payload) => {
@@ -97,5 +99,17 @@ export const deleteTask = (payload) => {
 export const clearTasks = () => {
 	return {
 		type: CLEAR_TASKS,
+	};
+};
+
+export const initSession = () => {
+	return {
+		type: INIT_SESSION,
+	};
+};
+
+export const logout = () => {
+	return {
+		type: LOGOUT_USER,
 	};
 };

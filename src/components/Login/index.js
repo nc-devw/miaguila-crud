@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { loginUser } from '../../redux/action/users_actions';
+import { initSession, loginUser } from '../../redux/action/users_actions';
 
 /* --- Assets --- */
 import spinner from '../../assets/icons/spinner.svg';
@@ -34,6 +34,7 @@ const Login = () => {
 		setLoading(true);
 		try {
 			await dispatch(loginUser(input));
+			dispatch(initSession());
 			history.push('/inicio');
 		} catch (err) {
 			setError(err.message);

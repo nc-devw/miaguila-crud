@@ -20,7 +20,7 @@ const Users = () => {
 
 	useEffect(() => {
 		dispatch(getUsers());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<UserStyled>

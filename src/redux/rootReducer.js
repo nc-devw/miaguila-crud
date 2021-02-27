@@ -1,18 +1,21 @@
 import {
 	GET_USERS,
 	LOGIN_USER,
+	LOGOUT_USER,
 	GET_TASKS,
 	ADD_TASK,
 	EDIT_TASK,
 	DELETE_TASK,
 	CLEAR_TASKS,
 	COMPLETE_TASK,
+	INIT_SESSION,
 } from './constants';
 
 const initialState = {
 	user: JSON.parse(localStorage.getItem('user')) || {},
 	tasks: JSON.parse(localStorage.getItem('tasks')) || [],
 	users: [],
+	session: localStorage.getItem('user') ? true : false,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -77,6 +80,20 @@ const usersReducer = (state = initialState, action) => {
 			return {
 				...state,
 				tasks: [],
+			};
+		}
+		case INIT_SESSION: {
+			return {
+				...state,
+				session: true,
+			};
+		}
+		case LOGOUT_USER: {
+			localStorage.removeItem('user');
+			return {
+				...state,
+				user: {},
+				session: false,
 			};
 		}
 		default:
